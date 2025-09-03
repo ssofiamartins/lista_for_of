@@ -3,14 +3,32 @@
     //PROBLEMA
     //Considere a lista de nomes abaixo:
     // let listaDeNomes = ["João", "Maria", "José", "Amanda", "Beatriz", "Júlio", "Olívia"];
-    //Para cada nome que for lido na estrutura de repetição, pergunte ao usuário se é Masculino (M) ou Feminino (F). De acordo com a resposta do usuário, adicione na lista correspondente. Apresente as duas listas de nomes ao final do programa.
+    //Para cada nome que for lido na estrutura de repetição, pergunte ao usuário se é Masculino (M) ou Feminino (F). 
+    // De acordo com a resposta do usuário, adicione na lista correspondente. Apresente as duas listas de nomes ao final do programa.
 
     //ENTRADA
+    let listaDeNomes = ["João", "Maria", "José", "Amanda", "Beatriz", "Júlio", "Olívia"];
 
+    let nomeMasc = [];
+    let nomeFem = [];
+    let invalidos = [];
 
     //PROCESSAMENTO
+    for (let nome of listaDeNomes) {
+        let mascFem = prompt(`Informe se o nome ${nome} é: M - masculino ou F - feminino`).toUpperCase().trim();
+        if (mascFem === "M") {
+            nomeMasc.push(nome);
+        }
+        else if (mascFem === "F") {
+            nomeFem.push(nome);
+        }
+        else {
+            invalidos.push(nome);
+        }  
+    }
 
     
     //SAÍDA
+    document.write(`Nomes masculinos: ${nomeMasc.join(" - ")} <br> Nomes femininos: ${nomeFem.join(" - ")} <br> Inválidos: ${invalidos.join(" - ")}`);
 
 </script>
