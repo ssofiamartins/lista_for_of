@@ -9,9 +9,19 @@
     let listaDeItens = [1, "João", "Eduardo", "Joice", 3, 5, 6, 8, "Maria", 5.6, 10];
 
     let pares = [];
+   
     //PROCESSAMENTO
+    for(let item of listaDeItens){
+        if(typeof item === "number" && item % 2 === 0){
+            pares.push(item);
+        }
+    }
 
-
+    let listaPares = pares.length;
+    let listaItens = listaDeItens.length;
+   
     //SAÍDA
-
+    document.write(`Números pares da lista de itens: ${pares.join(" - ")} <br>
+    Quantidade de números pares: ${listaPares} <br>
+    Quantidade de itens na lista original: ${listaItens}`);
 </script>
